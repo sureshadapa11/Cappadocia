@@ -1,12 +1,25 @@
 // Specials banner dismiss
-function dismissBanner() {
-  document.getElementById('specialsBanner').classList.add('hidden');
-  sessionStorage.setItem('bannerDismissed', '1');
+function adjustNavForBanner() {
+  const banner = document.getElementById('specialsBanner');
+  const nav = document.getElementById('navbar');
+  if (!banner || !nav) return;
+  const height = banner.classList.contains('hidden') ? 0 : banner.offsetHeight;
+  nav.style.top = height + 'px';
 }
+
+function dismissBanner() {
+  const banner = document.getElementById('specialsBanner');
+  banner.classList.add('hidden');
+  sessionStorage.setItem('bannerDismissed', '1');
+  document.getElementById('navbar').style.top = '0';
+}
+
 if (sessionStorage.getItem('bannerDismissed')) {
   const b = document.getElementById('specialsBanner');
   if (b) b.classList.add('hidden');
 }
+adjustNavForBanner();
+window.addEventListener('resize', adjustNavForBanner);
 
 // ── OPEN NOW / CLOSED BADGE ──────────────────────────
 function updateOpenBadge() {
