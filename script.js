@@ -108,35 +108,61 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const WHATSAPP_NUMBER = '447824063148';
 let cart = [];
 
-// Inject "Add" button into every menu card on load
+// Inject corner stepper into every menu card on load
 document.querySelectorAll('.menu-card').forEach(card => {
-  const body = card.querySelector('.menu-card-body');
-  if (!body) return;
-  const btn = document.createElement('button');
-  btn.className = 'add-to-cart-btn';
-  btn.textContent = '+ Add';
-  btn.onclick = () => addToCart(card, btn);
-  body.appendChild(btn);
+  const stepper = document.createElement('div');
+  stepper.className = 'card-stepper';
+  stepper.innerHTML = `
+    <button class="stepper-btn stepper-dec" onclick="stepDec(this)">−</button>
+    <span class="stepper-label">ADD</span>
+    <button class="stepper-btn stepper-inc" onclick="stepInc(this)">+</button>
+  `;
+  card.appendChild(stepper);
 });
 
-function addToCart(card, btn) {
-  const name = card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : 'Item';
-  const priceText = card.querySelector('.price') ? card.querySelector('.price').textContent.trim() : '';
-  const price = parseFloat(priceText.replace('£', '')) || 0;
+function stepInc(btn) {
+  const stepper = btn.closest('.card-stepper');
+  const card = stepper.closest('.menu-card');
+  const name = card.querySelector('h3')?.textContent.trim() || 'Item';
+  const price = parseFloat((card.querySelector('.price')?.textContent || '').replace('£', '')) || 0;
   const existing = cart.find(i => i.name === name);
-  if (existing) {
-    existing.qty++;
-  } else {
-    cart.push({ name, price, qty: 1 });
-  }
-  btn.textContent = '✓ Added';
-  btn.classList.add('added');
-  setTimeout(() => { btn.textContent = '+ Add'; btn.classList.remove('added'); }, 1200);
+  if (existing) { existing.qty++; } else { cart.push({ name, price, qty: 1 }); }
+  refreshStepper(stepper, name);
   updateCart();
-  const floatBtn = document.getElementById('floatCartBtn');
-  floatBtn.style.display = 'flex';
-  floatBtn.classList.add('bounce');
-  setTimeout(() => floatBtn.classList.remove('bounce'), 400);
+}
+
+function stepDec(btn) {
+  const stepper = btn.closest('.card-stepper');
+  const card = stepper.closest('.menu-card');
+  const name = card.querySelector('h3')?.textContent.trim() || 'Item';
+  const idx = cart.findIndex(i => i.name === name);
+  if (idx === -1) return;
+  cart[idx].qty--;
+  if (cart[idx].qty <= 0) cart.splice(idx, 1);
+  refreshStepper(stepper, name);
+  updateCart();
+}
+
+function refreshStepper(stepper, name) {
+  const item = cart.find(i => i.name === name);
+  const label = stepper.querySelector('.stepper-label');
+  const decBtn = stepper.querySelector('.stepper-dec');
+  if (item && item.qty > 0) {
+    label.textContent = item.qty;
+    decBtn.classList.add('visible');
+  } else {
+    label.textContent = 'ADD';
+    decBtn.classList.remove('visible');
+  }
+}
+
+function syncAllSteppers() {
+  document.querySelectorAll('.menu-card').forEach(card => {
+    const stepper = card.querySelector('.card-stepper');
+    if (!stepper) return;
+    const name = card.querySelector('h3')?.textContent.trim();
+    if (name) refreshStepper(stepper, name);
+  });
 }
 
 function updateCart() {
@@ -154,6 +180,7 @@ function updateCart() {
     document.getElementById('floatCartBtn').style.display = 'none';
     return;
   }
+  document.getElementById('floatCartBtn').style.display = 'flex';
   empty.style.display = 'none';
   footer.style.display = 'block';
   itemsEl.innerHTML = cart.map((item, idx) => `
@@ -178,11 +205,13 @@ function changeQty(idx, delta) {
   cart[idx].qty += delta;
   if (cart[idx].qty <= 0) cart.splice(idx, 1);
   updateCart();
+  syncAllSteppers();
 }
 
 function removeItem(idx) {
   cart.splice(idx, 1);
   updateCart();
+  syncAllSteppers();
 }
 
 function openCart() {

@@ -1568,30 +1568,49 @@ footer {
   }
 }
 
-/* ── ADD TO CART BUTTON ── */
-.add-to-cart-btn {
-  display: block;
-  width: 100%;
-  margin-top: 0.6rem;
-  padding: 0.4rem 0;
-  background: transparent;
+/* ── CARD STEPPER (corner of image) ── */
+.card-stepper {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.78);
   border: 1px solid var(--gold);
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 5;
+  height: 32px;
+}
+.stepper-btn {
+  background: none;
+  border: none;
   color: var(--gold);
-  font-family: 'Arial', sans-serif;
-  font-size: 0.75rem;
+  width: 0;
+  height: 32px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  transition: width 0.2s ease, background 0.2s;
+  flex-shrink: 0;
+}
+.stepper-btn:hover { background: rgba(212,168,67,0.2); }
+.stepper-btn.stepper-inc { width: 30px; }
+.stepper-btn.stepper-dec.visible { width: 30px; }
+.stepper-label {
+  color: #fff;
+  font-size: 0.7rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: background 0.25s, color 0.25s;
-}
-.add-to-cart-btn:hover {
-  background: var(--gold);
-  color: #1a1a1a;
-}
-.add-to-cart-btn.added {
-  background: var(--gold);
-  color: #1a1a1a;
+  padding: 0 8px;
+  font-family: 'Arial', sans-serif;
+  min-width: 28px;
+  text-align: center;
+  font-weight: bold;
 }
 
 /* ── CART DRAWER ── */
