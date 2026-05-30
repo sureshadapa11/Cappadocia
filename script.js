@@ -76,9 +76,31 @@ function toggleGalleryExtra(btn) {
   btn.textContent = galleryExpanded ? 'Show Less' : 'View More Photos';
 }
 
-// Reservation form
+// Reservation form → WhatsApp
 function submitReservation(e) {
   e.preventDefault();
+  const name    = document.getElementById('name').value.trim();
+  const phone   = document.getElementById('phone').value.trim();
+  const date    = document.getElementById('date').value;
+  const time    = document.getElementById('time').value;
+  const guests  = document.getElementById('guests').value;
+  const dining  = document.getElementById('dining').value;
+  const notes   = document.getElementById('notes').value.trim();
+
+  const dateFormatted = date ? new Date(date).toLocaleDateString('en-GB', { weekday:'long', day:'numeric', month:'long', year:'numeric' }) : '';
+  const timeFormatted = time ? new Date('1970-01-01T' + time).toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit', hour12:true }) : '';
+
+  let msg = `👋 New Table Reservation — Cappadocia Restaurant\n\n`;
+  msg += `👤 *Name:* ${name}\n`;
+  msg += `📞 *Phone:* ${phone}\n`;
+  msg += `📅 *Date:* ${dateFormatted}\n`;
+  msg += `⏰ *Time:* ${timeFormatted}\n`;
+  msg += `👥 *Guests:* ${guests}\n`;
+  msg += `🍽️ *Preference:* ${dining}\n`;
+  if (notes) msg += `📝 *Notes:* ${notes}\n`;
+  msg += `\nPlease confirm the booking. Thank you! 🙏`;
+
+  window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
   document.getElementById('reservationForm').style.display = 'none';
   document.getElementById('formSuccess').style.display = 'block';
 }
