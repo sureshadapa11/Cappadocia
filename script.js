@@ -76,14 +76,6 @@ function toggleGalleryExtra(btn) {
   btn.textContent = galleryExpanded ? 'Show Less' : 'View More Photos';
 }
 
-// Reviews toggle
-function toggleReviews(btn) {
-  const extras = document.querySelectorAll('.review-extra');
-  const showing = btn.textContent === 'Read All Reviews';
-  extras.forEach(card => { card.style.display = showing ? 'block' : 'none'; });
-  btn.textContent = showing ? 'Show Less' : 'Read All Reviews';
-}
-
 // Reservation form
 function submitReservation(e) {
   e.preventDefault();
