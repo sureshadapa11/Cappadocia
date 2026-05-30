@@ -797,7 +797,7 @@ section {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent 20%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.90) 100%);
+  background: linear-gradient(rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.55) 40%, rgba(0,0,0,0.88) 100%);
   z-index: 1;
 }
 
@@ -1520,5 +1520,13 @@ footer {
   .hero-buttons {
     flex-direction: column;
     align-items: center;
+  }
+
+  .hero-content h1 {
+    letter-spacing: 1px;
+  }
+
+  .hero-content h1 span {
+    letter-spacing: 4px;
   }
 }
