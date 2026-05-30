@@ -101,140 +101,199 @@
       </div>
 
       <div class="menu-tabs">
-        <button class="menu-tab active" onclick="showMenu('starters', this)">Starters</button>
-        <button class="menu-tab" onclick="showMenu('mains', this)">Mains</button>
-        <button class="menu-tab" onclick="showMenu('sharing', this)">Sharing Plates</button>
-        <button class="menu-tab" onclick="showMenu('desserts', this)">Desserts</button>
+        <button class="menu-tab active" onclick="showMenu('cold-meze', this)">Cold Meze</button>
+        <button class="menu-tab" onclick="showMenu('hot-meze', this)">Hot Meze</button>
+        <button class="menu-tab" onclick="showMenu('grills', this)">Charcoal Grills</button>
+        <button class="menu-tab" onclick="showMenu('mains', this)">Special Mains</button>
+        <button class="menu-tab" onclick="showMenu('seafood', this)">Seafood</button>
+        <button class="menu-tab" onclick="showMenu('desserts', this)">Desserts &amp; Drinks</button>
       </div>
 
-      <!-- STARTERS -->
-      <div class="menu-section active" id="starters">
+      <!-- COLD MEZE -->
+      <div class="menu-section active" id="cold-meze">
         <div class="menu-card">
           <span class="popular-tag">Popular</span>
-          <div class="menu-card-header">
-            <h3>Hummus</h3>
-            <span class="price">£5.50</span>
-          </div>
-          <p>Smooth, creamy chickpea hummus drizzled with olive oil and a sprinkle of paprika. Served with warm flatbread.</p>
+          <div class="menu-card-header"><h3>Hummus</h3><span class="price">£6.50</span></div>
+          <p>Chickpeas, tahini, garlic, olive oil, lemon. Served with warm Turkish bread.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Falafel</h3>
-            <span class="price">£6.00</span>
-          </div>
-          <p>Crispy golden falafel made from ground chickpeas and herbs, served with a side of tahini dipping sauce.</p>
+          <div class="menu-card-header"><h3>Cacik</h3><span class="price">£6.50</span></div>
+          <p>Cool yoghurt with cucumber, garlic and fresh mint. Served with warm Turkish bread.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Chicken Wings</h3>
-            <span class="price">£7.50</span>
-          </div>
-          <p>Tender, marinated chicken wings seasoned with Turkish spices and grilled to perfection. Served with garlic sauce.</p>
+          <div class="menu-card-header"><h3>Patlican Tarator</h3><span class="price">£6.50</span></div>
+          <p>Smoked aubergine with tahini, yoghurt and garlic. Served with warm Turkish bread.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Mixed Salad</h3>
-            <span class="price">£4.50</span>
-          </div>
-          <p>Fresh garden salad with tomato, cucumber, red onion, olives, and feta, dressed in a light lemon vinaigrette.</p>
+          <div class="menu-card-header"><h3>Tahini</h3><span class="price">£6.50</span></div>
+          <p>Sesame paste with olive oil and lemon. Served with warm Turkish bread.</p>
         </div>
       </div>
 
-      <!-- MAINS -->
-      <div class="menu-section" id="mains">
+      <!-- HOT MEZE -->
+      <div class="menu-section" id="hot-meze">
         <div class="menu-card">
-          <span class="popular-tag">Most Popular</span>
-          <div class="menu-card-header">
-            <h3>Kebab</h3>
-            <span class="price">£13.50</span>
-          </div>
-          <p>Our signature grilled kebab — tender marinated meat cooked on the grill, served with rice, salad and flatbread.</p>
+          <div class="menu-card-header"><h3>Calamari</h3><span class="price">£10.00</span></div>
+          <p>Crispy golden squid served with tartar sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Halloumi</h3><span class="price">£8.00</span></div>
+          <p>Grilled Cypriot halloumi cheese, golden and perfectly salted.</p>
         </div>
         <div class="menu-card">
           <span class="popular-tag">Popular</span>
-          <div class="menu-card-header">
-            <h3>Lahmacun</h3>
-            <span class="price">£9.00</span>
-          </div>
-          <p>Thin Turkish flatbread topped with minced lamb, fresh tomatoes, onion, parsley and spices. Light, crispy and irresistible.</p>
+          <div class="menu-card-header"><h3>Falafel</h3><span class="price">£8.00</span></div>
+          <p>Crispy chickpea falafel served with hummus.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Kofta</h3>
-            <span class="price">£12.50</span>
-          </div>
-          <p>Seasoned minced lamb kofta skewers, grilled over charcoal. Served with rice, grilled vegetables and a side salad.</p>
+          <div class="menu-card-header"><h3>Sucuk</h3><span class="price">£9.00</span></div>
+          <p>Spicy Turkish beef sausage, grilled and full of flavour.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Kebab Chicken &amp; Rice</h3>
-            <span class="price">£12.00</span>
-          </div>
-          <p>Juicy grilled chicken kebab served on a bed of fluffy rice with a fresh salad and our house garlic sauce.</p>
+          <div class="menu-card-header"><h3>Muska Borek</h3><span class="price">£9.00</span></div>
+          <p>Crispy filo pastry filled with feta cheese and fresh parsley.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Chicken Stew with Veg</h3>
-            <span class="price">£11.50</span>
-          </div>
-          <p>Slow-cooked chicken in a rich tomato and vegetable sauce, seasoned with aromatic Turkish herbs. Served with rice.</p>
+          <div class="menu-card-header"><h3>Pacanga Borek</h3><span class="price">£10.00</span></div>
+          <p>Rolled filo pastry filled with melted cheese and cured pastrami.</p>
         </div>
       </div>
 
-      <!-- SHARING -->
-      <div class="menu-section" id="sharing">
+      <!-- CHARCOAL GRILLS -->
+      <div class="menu-section" id="grills">
+        <div class="menu-card-note">All charcoal grills served with rice or bulgur, salad &amp; sauce</div>
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header"><h3>Chicken Shish</h3><span class="price">£20.50</span></div>
+          <p>Tender marinated chicken pieces on skewers, grilled over charcoal. Served with rice or bulgur, salad &amp; sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Lamb Shish</h3><span class="price">£21.50</span></div>
+          <p>Juicy cubes of marinated lamb on skewers, charcoal grilled to perfection. Served with rice or bulgur, salad &amp; sauce.</p>
+        </div>
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header"><h3>Adana Kebab</h3><span class="price">£20.50</span></div>
+          <p>Spiced minced lamb moulded onto flat skewers and grilled over charcoal. Served with rice or bulgur, salad &amp; sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Lamb Chops</h3><span class="price">£25.50</span></div>
+          <p>Premium lamb chops marinated and charcoal grilled. Served with rice or bulgur, salad &amp; sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Lamb Ribs</h3><span class="price">£21.50</span></div>
+          <p>Slow-cooked then charcoal grilled lamb ribs, falling off the bone. Served with rice or bulgur, salad &amp; sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Chicken Wings</h3><span class="price">£19.00</span></div>
+          <p>Marinated chicken wings grilled over charcoal until crispy and smoky. Served with rice or bulgur, salad &amp; sauce.</p>
+        </div>
         <div class="menu-card">
           <span class="popular-tag">Chef's Pick</span>
-          <div class="menu-card-header">
-            <h3>Mix Plate for 2</h3>
-            <span class="price">£26.00</span>
-          </div>
-          <p>A generous sharing platter featuring kebab, kofta, lahmacun, rice, salad, hummus and freshly baked flatbread. Perfect for two.</p>
-        </div>
-        <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Platter for Two</h3>
-            <span class="price">£28.00</span>
-          </div>
-          <p>Our ultimate sharing experience — a selection of grilled meats, starters and sides brought together on one impressive platter.</p>
-        </div>
-        <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Meze Selection</h3>
-            <span class="price">£16.00</span>
-          </div>
-          <p>A spread of classic Turkish meze including hummus, falafel, tabbouleh, stuffed vine leaves and warm flatbread.</p>
+          <div class="menu-card-header"><h3>Mixed Grill</h3><span class="price">£21.50</span></div>
+          <p>A selection of our finest charcoal grilled meats — chicken shish, lamb shish &amp; adana. Served with rice or bulgur, salad &amp; sauce.</p>
         </div>
       </div>
 
-      <!-- DESSERTS -->
+      <!-- SPECIAL MAINS -->
+      <div class="menu-section" id="mains">
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header"><h3>Beyti Kebab</h3><span class="price">£21.95</span></div>
+          <p>Minced lamb or chicken wrapped in bread, topped with garlic yoghurt and rich tomato sauce.</p>
+        </div>
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header"><h3>Ali Nazik</h3><span class="price">£21.95</span></div>
+          <p>Tender lamb or chicken served on a bed of smoked aubergine purée — a Turkish classic.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Ispanak Tavuk</h3><span class="price">£21.50</span></div>
+          <p>Chicken cooked with fresh spinach in a rich creamy sauce. Hearty and flavourful.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Chicken Asparagus &amp; Wedges</h3><span class="price">£19.95</span></div>
+          <p>Grilled chicken with asparagus and chunky potato wedges.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Çoban Salad</h3><span class="price">£6.90</span></div>
+          <p>Tomato, cucumber, pepper, onion, parsley — fresh and light.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Greek Salad</h3><span class="price">£7.90</span></div>
+          <p>Tomato, cucumber, olives, feta cheese and red onion with olive oil dressing.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Avocado &amp; Halloumi Salad</h3><span class="price">£9.90</span></div>
+          <p>Fresh avocado with grilled halloumi, mixed leaves and house dressing.</p>
+        </div>
+      </div>
+
+      <!-- SEAFOOD -->
+      <div class="menu-section" id="seafood">
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Sea Bass</h3><span class="price">£20.95</span></div>
+          <p>Fresh sea bass fillet, grilled or pan-fried to your preference.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Salmon</h3><span class="price">£20.95</span></div>
+          <p>Atlantic salmon fillet, grilled with herbs and served with seasonal sides.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Swordfish</h3><span class="price">£22.00</span></div>
+          <p>Thick swordfish steak, charcoal grilled with a squeeze of fresh lemon.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>King Prawns</h3><span class="price">£20.50</span></div>
+          <p>Juicy king prawns grilled with garlic butter and fresh herbs.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Fish Mixed Kebab</h3><span class="price">£20.95</span></div>
+          <p>A selection of fish and seafood on skewers, charcoal grilled.</p>
+        </div>
+        <div class="menu-card">
+          <span class="popular-tag">For 2 People</span>
+          <div class="menu-card-header"><h3>Fish Platter</h3><span class="price">£65.00</span></div>
+          <p>A magnificent sharing platter of mixed seafood — the ultimate feast for two.</p>
+        </div>
+      </div>
+
+      <!-- DESSERTS & DRINKS -->
       <div class="menu-section" id="desserts">
         <div class="menu-card">
           <span class="popular-tag">Popular</span>
-          <div class="menu-card-header">
-            <h3>Baklava</h3>
-            <span class="price">£4.50</span>
-          </div>
-          <p>Traditional layers of crispy filo pastry filled with chopped pistachios and walnuts, soaked in sweet honey syrup.</p>
+          <div class="menu-card-header"><h3>Baklava</h3><span class="price">£7.50</span></div>
+          <p>Traditional crispy filo pastry with pistachios and walnuts soaked in honey syrup.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Tiramisu</h3>
-            <span class="price">£5.00</span>
-          </div>
-          <p>Classic Italian-inspired tiramisu with layers of espresso-soaked sponge and mascarpone cream, dusted with cocoa.</p>
+          <div class="menu-card-header"><h3>Sticky Toffee Pudding</h3><span class="price">£7.50</span></div>
+          <p>Classic British favourite — warm sponge drenched in rich toffee sauce, served with cream or ice cream.</p>
         </div>
         <div class="menu-card">
-          <div class="menu-card-header">
-            <h3>Turkish Tea &amp; Coffee</h3>
-            <span class="price">£2.50</span>
-          </div>
-          <p>Round off your meal with a traditional Turkish çay or a rich Turkish coffee. Complimentary lokum (Turkish delight) included.</p>
+          <div class="menu-card-header"><h3>Chocolate Cake</h3><span class="price">£7.50</span></div>
+          <p>Rich, indulgent chocolate cake served warm with cream or ice cream.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Cheesecake</h3><span class="price">£7.50</span></div>
+          <p>Creamy cheesecake on a biscuit base. Ask your server for today's flavour.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Ice Cream</h3><span class="price">£7.50</span></div>
+          <p>Scoops of premium ice cream. Ask your server for today's flavours.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Cocktails</h3><span class="price">£9.95</span></div>
+          <p>Mojito · Pornstar Martini · Espresso Martini · Aperol Spritz · Piña Colada · Margarita · Long Island Iced Tea</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header"><h3>Beers &amp; Ciders</h3><span class="price"></span></div>
+          <p>Efes · Peroni · Corona · Kopparberg · Magners</p>
         </div>
       </div>
 
       <p style="text-align:center; color:#999; font-family:Arial,sans-serif; font-size:0.8rem; margin-top:2rem;">
-        Prices are approximate. Please call or visit for the full current menu. Cash preferred.
+        Sides: Chips £3.50 · Rice £3.00 · Bulgur £3.00 · Bread £3.00 · Yoghurt £4.00 · Grilled Vegetables £5–6<br>
+        Prices correct at time of publishing. Please ask staff for current specials and allergen information.
       </p>
     </div>
   </section>
