@@ -8,6 +8,29 @@ if (sessionStorage.getItem('bannerDismissed')) {
   if (b) b.classList.add('hidden');
 }
 
+// ── OPEN NOW / CLOSED BADGE ──────────────────────────
+function updateOpenBadge() {
+  const badge = document.getElementById('openBadge');
+  if (!badge) return;
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun,1=Mon,...,6=Sat
+  const cur = now.getHours() * 60 + now.getMinutes();
+  const open = 12 * 60; // 12:00
+  const close = (day === 5 || day === 6) ? 23 * 60 : 22 * 60; // Fri/Sat 23:00, else 22:00
+  const isOpen = cur >= open && cur < close;
+  if (isOpen) {
+    const closeH = close / 60;
+    badge.textContent = `● Open · Closes ${closeH}:00`;
+    badge.className = 'open-badge open';
+  } else {
+    const nextOpen = cur < open ? 'Opens 12:00' : 'Opens tomorrow 12:00';
+    badge.textContent = `● Closed · ${nextOpen}`;
+    badge.className = 'open-badge closed';
+  }
+}
+updateOpenBadge();
+setInterval(updateOpenBadge, 60000); // refresh every minute
+
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
