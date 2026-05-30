@@ -49,13 +49,32 @@ document.addEventListener('keydown', (e) => {
 function showGallery(cat, btn) {
   document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
+  const expanded = !document.querySelector('.gallery-item.gallery-extra[style*="display: block"]') === false
+    || document.getElementById('galleryMoreBtn').textContent.includes('Show Less');
   document.querySelectorAll('.gallery-item').forEach(item => {
-    if (cat === 'all' || item.dataset.cat === cat) {
-      item.classList.remove('hidden');
+    const catMatch = cat === 'all' || item.dataset.cat === cat;
+    const isExtra = item.classList.contains('gallery-extra');
+    if (!catMatch) {
+      item.style.display = 'none';
+    } else if (isExtra) {
+      item.style.display = expanded ? 'block' : 'none';
     } else {
-      item.classList.add('hidden');
+      item.style.display = 'block';
     }
   });
+}
+
+// Gallery View More toggle
+function toggleGalleryExtra(btn) {
+  const extras = document.querySelectorAll('.gallery-item.gallery-extra');
+  const activeTab = document.querySelector('.gallery-tab.active');
+  const cat = activeTab ? activeTab.getAttribute('onclick').match(/'([^']+)'/)[1] : 'all';
+  const showing = btn.textContent.includes('View More');
+  extras.forEach(item => {
+    const catMatch = cat === 'all' || item.dataset.cat === cat;
+    item.style.display = (showing && catMatch) ? 'block' : 'none';
+  });
+  btn.textContent = showing ? 'Show Less' : 'View More Photos';
 }
 
 // Reservation form
