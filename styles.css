@@ -179,7 +179,7 @@ nav {
 }
 
 .hero-content h1 {
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(2rem, 10vw, 5rem);
   color: var(--white);
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -809,7 +809,7 @@ section {
   width: 100%;
 }
 
-.special-content h4 {
+#specials .special-content h4 {
   color: var(--gold);
   font-size: 1rem;
   letter-spacing: 1.5px;
@@ -818,7 +818,7 @@ section {
   font-family: 'Playfair Display', serif;
 }
 
-.special-content p {
+#specials .special-content p {
   color: #ddd;
   font-size: 0.85rem;
   margin-bottom: 0;
@@ -1462,6 +1462,10 @@ footer {
 
   .about-badge {
     right: 0.5rem;
+  }
+
+  .about-image-block {
+    margin-bottom: 2.5rem;
   }
 
   .specials-grid {
