@@ -18,6 +18,7 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#menu">Menu</a></li>
+      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#info">Hours</a></li>
       <li><a href="#contact" class="nav-reserve-btn">Reserve a Table</a></li>
@@ -31,13 +32,14 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" onclick="closeMobile()">About</a>
     <a href="#menu" onclick="closeMobile()">Menu</a>
+    <a href="#gallery" onclick="closeMobile()">Gallery</a>
     <a href="#reviews" onclick="closeMobile()">Reviews</a>
     <a href="#info" onclick="closeMobile()">Hours &amp; Info</a>
     <a href="#contact" onclick="closeMobile()">Reserve a Table</a>
   </div>
 
   <!-- HERO -->
-  <section id="hero">
+  <section id="hero" style="background-image: url('images/hero-bg.jpeg'); background-size: cover; background-position: center;">
     <div class="hero-pattern"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -66,10 +68,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-image-block">
-        <div class="about-img-placeholder">
-          <span>🍽️</span>
-          <p>Cappadocia Kitchen</p>
-        </div>
+        <img src="images/interior-2.jpeg" alt="Cappadocia Restaurant interior" class="about-img-real" />
         <div class="about-badge">
           <strong>4.3★</strong>
           616<br>Reviews
@@ -262,6 +261,65 @@
           <h4>Eat In or Take Away</h4>
           <p>Enjoy your meal in our restaurant or take it on the road with you.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-header">
+      <div class="section-tag">Our Food &amp; Ambience</div>
+      <h2>Photo Gallery</h2>
+      <div class="section-line"><div class="section-line-dot"></div></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item gallery-large">
+        <img src="images/food-mixed-grill.jpeg" alt="Mixed grill platter" />
+        <div class="gallery-caption">Signature Mixed Grill</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/interior-1.jpeg" alt="Restaurant interior" />
+        <div class="gallery-caption">Our Dining Room</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/interior-3.jpeg" alt="Turkish lanterns ceiling" />
+        <div class="gallery-caption">Turkish Lanterns</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-lahmacun.jpeg" alt="Lahmacun" />
+        <div class="gallery-caption">Fresh Lahmacun</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-kebab.jpeg" alt="Kebab with rice" />
+        <div class="gallery-caption">Grilled Kebab &amp; Rice</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-manti.jpeg" alt="Manti dumplings" />
+        <div class="gallery-caption">Turkish Manti</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-chicken-kebab.jpeg" alt="Chicken kebab" />
+        <div class="gallery-caption">Chicken Kebab</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-sizzler.jpeg" alt="Sizzling dishes" />
+        <div class="gallery-caption">Sizzling Hot Dishes</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-stew.jpeg" alt="Turkish stew" />
+        <div class="gallery-caption">Rich Turkish Stew</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-salad.jpeg" alt="Fresh salad" />
+        <div class="gallery-caption">Fresh Mixed Salad</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-manti2.jpeg" alt="Manti with sauce" />
+        <div class="gallery-caption">Manti with Tomato Sauce</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/food-table.jpeg" alt="Family dining" />
+        <div class="gallery-caption">Family Meals</div>
       </div>
     </div>
   </section>
