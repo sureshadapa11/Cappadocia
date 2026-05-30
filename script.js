@@ -241,6 +241,24 @@ function closeCart() {
   document.getElementById('cartDrawer').classList.remove('open');
   document.getElementById('cartOverlay').classList.remove('open');
   document.body.style.overflow = '';
+  allergyChoice = null;
+  document.getElementById('allergyNo').classList.remove('selected');
+  document.getElementById('allergyYes').classList.remove('selected');
+  document.getElementById('allergyNoteWrap').style.display = 'none';
+  document.getElementById('allergyInput').value = '';
+  document.getElementById('cartSendBtn').style.display = 'none';
+}
+
+let allergyChoice = null;
+
+function selectAllergy(choice) {
+  allergyChoice = choice;
+  document.getElementById('allergyNo').classList.toggle('selected', choice === 'no');
+  document.getElementById('allergyYes').classList.toggle('selected', choice === 'yes');
+  const noteWrap = document.getElementById('allergyNoteWrap');
+  noteWrap.style.display = choice === 'yes' ? 'block' : 'none';
+  if (choice === 'no') document.getElementById('allergyInput').value = '';
+  document.getElementById('cartSendBtn').style.display = 'block';
 }
 
 function sendWhatsAppOrder() {
@@ -250,8 +268,11 @@ function sendWhatsAppOrder() {
     if (i.note) line += ` — ${i.note}`;
     return line;
   }).join('\n');
-  const allergy = (document.getElementById('allergyInput')?.value || '').trim();
-  const allergyLine = allergy ? `\nAllergies / Dietary requirements: ${allergy}` : '';
+  let allergyLine = '';
+  if (allergyChoice === 'yes') {
+    const text = (document.getElementById('allergyInput')?.value || '').trim();
+    allergyLine = `\nAllergies / Dietary requirements: ${text || 'Please confirm with customer'}`;
+  }
   const msg = `Hello, I would like to place an order.\n\nItems:\n${lines}${allergyLine}\n\nPlease confirm availability and total price. Thank you.`;
   window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }

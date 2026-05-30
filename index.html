@@ -959,11 +959,17 @@
     <div class="cart-footer" id="cartFooter" style="display:none">
       <div class="cart-total" id="cartTotal"></div>
       <div class="cart-allergy-wrap">
-        <label class="cart-allergy-label" for="allergyInput">Allergies / Dietary requirements</label>
-        <input class="cart-note-input" id="allergyInput" type="text" placeholder="e.g. nut allergy, gluten free, dairy intolerant…" />
+        <p class="cart-allergy-question">Any allergies or dietary requirements?</p>
+        <div class="cart-allergy-btns">
+          <button class="allergy-btn" id="allergyNo" onclick="selectAllergy('no')">No</button>
+          <button class="allergy-btn" id="allergyYes" onclick="selectAllergy('yes')">Yes</button>
+        </div>
+        <div id="allergyNoteWrap" style="display:none">
+          <input class="cart-note-input" id="allergyInput" type="text" placeholder="e.g. nut allergy, gluten free, dairy intolerant…" />
+        </div>
       </div>
       <p class="cart-note">We'll confirm availability &amp; total price via WhatsApp.</p>
-      <button class="cart-send-btn" onclick="sendWhatsAppOrder()">Send Order via WhatsApp</button>
+      <button class="cart-send-btn" id="cartSendBtn" onclick="sendWhatsAppOrder()" style="display:none">Send Order via WhatsApp</button>
     </div>
     <div class="cart-empty" id="cartEmpty">
       <p>No items added yet.<br>Browse the menu and tap <strong>+ Add</strong>.</p>
