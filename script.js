@@ -30,6 +30,19 @@ function showMenu(sectionId, btn) {
   btn.classList.add('active');
 }
 
+// Gallery filter
+function showGallery(cat, btn) {
+  document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.classList.remove('hidden');
+    } else {
+      item.classList.add('hidden');
+    }
+  });
+}
+
 // Reservation form
 function submitReservation(e) {
   e.preventDefault();

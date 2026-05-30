@@ -39,7 +39,7 @@
   </div>
 
   <!-- HERO -->
-  <section id="hero" style="background-image: url('images/hero-bg.jpeg'); background-size: cover; background-position: center;">
+  <section id="hero" style="background-image: url('images/exterior-day.jpeg'); background-size: cover; background-position: center top;">
     <div class="hero-pattern"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -68,7 +68,7 @@
   <section id="about">
     <div class="about-grid">
       <div class="about-image-block">
-        <img src="images/interior-2.jpeg" alt="Cappadocia Restaurant interior" class="about-img-real" />
+        <img src="images/interior-wide.jpeg" alt="Cappadocia Restaurant interior" class="about-img-real" />
         <div class="about-badge">
           <strong>4.3★</strong>
           616<br>Reviews
@@ -272,54 +272,125 @@
       <h2>Photo Gallery</h2>
       <div class="section-line"><div class="section-line-dot"></div></div>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item gallery-large">
-        <img src="images/food-mixed-grill.jpeg" alt="Mixed grill platter" />
-        <div class="gallery-caption">Signature Mixed Grill</div>
+    <!-- Gallery Tabs -->
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" onclick="showGallery('all', this)">All</button>
+      <button class="gallery-tab" onclick="showGallery('food', this)">Food</button>
+      <button class="gallery-tab" onclick="showGallery('interior', this)">Interior</button>
+      <button class="gallery-tab" onclick="showGallery('exterior', this)">Outside</button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- EXTERIOR -->
+      <div class="gallery-item gallery-large" data-cat="exterior">
+        <img src="images/exterior-day.jpeg" alt="Cappadocia Restaurant exterior daytime" />
+        <div class="gallery-caption">Cappadocia Restaurant</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/interior-1.jpeg" alt="Restaurant interior" />
+      <div class="gallery-item" data-cat="exterior">
+        <img src="images/exterior-night.jpeg" alt="Restaurant at night" />
+        <div class="gallery-caption">Open Evenings</div>
+      </div>
+      <div class="gallery-item" data-cat="exterior">
+        <img src="images/exterior-evening.jpeg" alt="Restaurant at dusk" />
+        <div class="gallery-caption">Restaurant &amp; Takeaway</div>
+      </div>
+      <!-- INTERIOR -->
+      <div class="gallery-item" data-cat="interior">
+        <img src="images/interior-wide.jpeg" alt="Dining room" />
         <div class="gallery-caption">Our Dining Room</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/interior-3.jpeg" alt="Turkish lanterns ceiling" />
-        <div class="gallery-caption">Turkish Lanterns</div>
+      <div class="gallery-item" data-cat="interior">
+        <img src="images/interior-bar.jpeg" alt="Interior with bar" />
+        <div class="gallery-caption">Restaurant Interior</div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-cat="interior">
+        <img src="images/interior-chandelier.jpeg" alt="Turkish chandelier ceiling" />
+        <div class="gallery-caption">Turkish Chandelier</div>
+      </div>
+      <div class="gallery-item" data-cat="interior">
+        <img src="images/interior-kitchen.jpeg" alt="Open kitchen view" />
+        <div class="gallery-caption">Open Kitchen</div>
+      </div>
+      <div class="gallery-item" data-cat="interior">
+        <img src="images/interior-chef.jpeg" alt="Chef in kitchen" />
+        <div class="gallery-caption">Our Kitchen</div>
+      </div>
+      <div class="gallery-item" data-cat="interior">
+        <img src="images/interior-menuboard.jpeg" alt="Menu boards" />
+        <div class="gallery-caption">Our Full Menu</div>
+      </div>
+      <!-- FOOD -->
+      <div class="gallery-item gallery-large" data-cat="food">
+        <img src="images/food-big-platter.jpeg" alt="Massive mixed grill platter" />
+        <div class="gallery-caption">Signature Mixed Grill</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-lamb-chops.jpeg" alt="Lamb chops platter" />
+        <div class="gallery-caption">Lamb Chop Platter</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-chicken-platter.jpeg" alt="Chicken shish platter" />
+        <div class="gallery-caption">Chicken Shish</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-lahmacun-tea.jpeg" alt="Lahmacun with Turkish tea" />
+        <div class="gallery-caption">Lahmacun &amp; Turkish Tea</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-adana.jpeg" alt="Adana kebab" />
+        <div class="gallery-caption">Adana Kebab</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-iskender.jpeg" alt="Iskender kebab" />
+        <div class="gallery-caption">Iskender Kebab</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-chicken-shish.jpeg" alt="Chicken shish skewers" />
+        <div class="gallery-caption">Chicken Shish Skewers</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-shish.jpeg" alt="Shish kebab skewers" />
+        <div class="gallery-caption">Shish Skewers &amp; Rice</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-sac-kavurma.jpeg" alt="Sac kavurma" />
+        <div class="gallery-caption">Sac Kavurma</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-mixed-grill.jpeg" alt="Mixed grill" />
+        <div class="gallery-caption">Mixed Grill</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
         <img src="images/food-lahmacun.jpeg" alt="Lahmacun" />
         <div class="gallery-caption">Fresh Lahmacun</div>
       </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-manti.jpeg" alt="Manti" />
+        <div class="gallery-caption">Turkish Manti</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
         <img src="images/food-kebab.jpeg" alt="Kebab with rice" />
         <div class="gallery-caption">Grilled Kebab &amp; Rice</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/food-manti.jpeg" alt="Manti dumplings" />
-        <div class="gallery-caption">Turkish Manti</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/food-chicken-kebab.jpeg" alt="Chicken kebab" />
-        <div class="gallery-caption">Chicken Kebab</div>
-      </div>
-      <div class="gallery-item">
-        <img src="images/food-sizzler.jpeg" alt="Sizzling dishes" />
-        <div class="gallery-caption">Sizzling Hot Dishes</div>
-      </div>
-      <div class="gallery-item">
+      <div class="gallery-item" data-cat="food">
         <img src="images/food-stew.jpeg" alt="Turkish stew" />
-        <div class="gallery-caption">Rich Turkish Stew</div>
+        <div class="gallery-caption">Turkish Stew</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/food-salad.jpeg" alt="Fresh salad" />
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-platter-wide.jpeg" alt="Large grill platter" />
+        <div class="gallery-caption">Grill Feast</div>
+      </div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-salad.jpeg" alt="Fresh mixed salad" />
         <div class="gallery-caption">Fresh Mixed Salad</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/food-manti2.jpeg" alt="Manti with sauce" />
-        <div class="gallery-caption">Manti with Tomato Sauce</div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-dessert.jpeg" alt="Baklava and Turkish coffee" />
+        <div class="gallery-caption">Baklava &amp; Turkish Coffee</div>
       </div>
-      <div class="gallery-item">
-        <img src="images/food-table.jpeg" alt="Family dining" />
-        <div class="gallery-caption">Family Meals</div>
+      <div class="gallery-item" data-cat="food">
+        <img src="images/food-sizzler.jpeg" alt="Sizzling dishes" />
+        <div class="gallery-caption">Sizzling Dishes</div>
       </div>
     </div>
   </section>
