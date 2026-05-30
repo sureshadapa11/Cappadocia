@@ -188,6 +188,8 @@ function updateCart() {
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
         <div class="cart-item-price">${item.price > 0 ? '£' + item.price.toFixed(2) + ' each' : ''}</div>
+        <button class="cart-note-toggle" onclick="toggleNote(${idx})">${item.note ? '✎ ' + item.note : '+ Add note'}</button>
+        <input class="cart-note-input" id="note-${idx}" type="text" placeholder="e.g. make it spicy, no onions…" value="${item.note || ''}" oninput="saveNote(${idx}, this.value)" style="display:none" />
       </div>
       <div class="cart-qty">
         <button onclick="changeQty(${idx}, -1)">−</button>
@@ -199,6 +201,21 @@ function updateCart() {
   `).join('');
   const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
   totalEl.textContent = total > 0 ? 'Estimated Total: £' + total.toFixed(2) : '';
+}
+
+function toggleNote(idx) {
+  const input = document.getElementById('note-' + idx);
+  const isHidden = input.style.display === 'none';
+  input.style.display = isHidden ? 'block' : 'none';
+  if (isHidden) input.focus();
+}
+
+function saveNote(idx, value) {
+  if (cart[idx]) {
+    cart[idx].note = value.trim();
+    const toggle = document.querySelector(`#note-${idx}`).previousElementSibling;
+    if (toggle) toggle.textContent = value.trim() ? '✎ ' + value.trim() : '+ Add note';
+  }
 }
 
 function changeQty(idx, delta) {
@@ -228,7 +245,11 @@ function closeCart() {
 
 function sendWhatsAppOrder() {
   if (cart.length === 0) return;
-  const lines = cart.map(i => `- ${i.name} x${i.qty}${i.price > 0 ? ' (£' + i.price.toFixed(2) + ' each)' : ''}`).join('\n');
+  const lines = cart.map(i => {
+    let line = `- ${i.name} x${i.qty}${i.price > 0 ? ' (£' + i.price.toFixed(2) + ' each)' : ''}`;
+    if (i.note) line += ` — ${i.note}`;
+    return line;
+  }).join('\n');
   const msg = `Hello, I would like to place an order.\n\nItems:\n${lines}\n\nPlease confirm availability and total price. Thank you.`;
   window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }

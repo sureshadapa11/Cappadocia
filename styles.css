@@ -1708,6 +1708,35 @@ footer {
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
+.cart-note-toggle {
+  background: none;
+  border: none;
+  color: #888;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.72rem;
+  cursor: pointer;
+  padding: 3px 0 0;
+  text-align: left;
+  display: block;
+  transition: color 0.2s;
+}
+.cart-note-toggle:hover { color: var(--gold); }
+
+.cart-note-input {
+  width: 100%;
+  margin-top: 5px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(212,168,67,0.3);
+  border-radius: 4px;
+  color: #ddd;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.75rem;
+  padding: 5px 8px;
+  outline: none;
+}
+.cart-note-input:focus { border-color: var(--gold); }
+.cart-note-input::placeholder { color: #555; }
+
 .cart-remove {
   background: none;
   border: none;
