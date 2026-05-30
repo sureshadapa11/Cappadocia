@@ -578,6 +578,117 @@ section {
   font-family: 'Arial', sans-serif;
 }
 
+/* ── MENU CARD IMAGE ── */
+.menu-card-img-wrap {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card-img-wrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 50px rgba(0,0,0,0.2);
+}
+
+.menu-card-img {
+  width: 100%;
+  display: block;
+}
+
+.menu-card-hint {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem 1rem 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ── LIGHTBOX ── */
+.menu-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.menu-lightbox.open {
+  display: flex;
+}
+
+.menu-lightbox-inner {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+}
+
+.menu-lightbox-inner img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+  color: var(--gold);
+}
+
+.menu-divider {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.menu-divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: #eee;
+}
+
+.menu-divider span {
+  position: relative;
+  background: var(--light-cream);
+  padding: 0 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-family: 'Arial', sans-serif;
+}
+
 .menu-card-note {
   grid-column: 1 / -1;
   text-align: center;

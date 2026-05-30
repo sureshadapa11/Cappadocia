@@ -30,6 +30,21 @@ function showMenu(sectionId, btn) {
   btn.classList.add('active');
 }
 
+// Menu card lightbox
+function openMenuCard() {
+  document.getElementById('menuLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenuCard() {
+  document.getElementById('menuLightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenuCard();
+});
+
 // Gallery filter
 function showGallery(cat, btn) {
   document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));

@@ -100,6 +100,24 @@
         <div class="section-line"><div class="section-line-dot"></div></div>
       </div>
 
+      <!-- MENU CARD IMAGE -->
+      <div class="menu-card-img-wrap">
+        <img src="images/menu-card.png" alt="Cappadocia Restaurant Full Menu Card" class="menu-card-img" id="menuCardImg" onclick="openMenuCard()" />
+        <div class="menu-card-hint">Click to enlarge</div>
+      </div>
+
+      <!-- MENU LIGHTBOX -->
+      <div class="menu-lightbox" id="menuLightbox" onclick="closeMenuCard()">
+        <div class="menu-lightbox-inner">
+          <button class="lightbox-close" onclick="closeMenuCard()">✕</button>
+          <img src="images/menu-card.png" alt="Full menu" />
+        </div>
+      </div>
+
+      <div class="menu-divider">
+        <span>Or browse by category</span>
+      </div>
+
       <div class="menu-tabs">
         <button class="menu-tab active" onclick="showMenu('cold-meze', this)">Cold Meze</button>
         <button class="menu-tab" onclick="showMenu('hot-meze', this)">Hot Meze</button>
