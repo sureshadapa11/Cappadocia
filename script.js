@@ -1,3 +1,13 @@
+// Specials banner dismiss
+function dismissBanner() {
+  document.getElementById('specialsBanner').classList.add('hidden');
+  sessionStorage.setItem('bannerDismissed', '1');
+}
+if (sessionStorage.getItem('bannerDismissed')) {
+  const b = document.getElementById('specialsBanner');
+  if (b) b.classList.add('hidden');
+}
+
 // Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');

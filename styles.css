@@ -28,6 +28,39 @@ body {
   overflow-x: hidden;
 }
 
+/* ── SPECIALS BANNER ── */
+.specials-banner {
+  background: var(--gold);
+  color: #1a1a1a;
+  text-align: center;
+  padding: 0.55rem 3rem;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.82rem;
+  position: relative;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.specials-banner-text strong { font-weight: 700; }
+.specials-banner-close {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #1a1a1a;
+  font-size: 1rem;
+  cursor: pointer;
+  opacity: 0.6;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+}
+.specials-banner-close:hover { opacity: 1; }
+.specials-banner.hidden { display: none; }
+
 /* ── NAVBAR ── */
 nav {
   position: fixed;
