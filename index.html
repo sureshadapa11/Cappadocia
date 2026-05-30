@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cappadocia Restaurant Ipswich – Authentic Turkish Cuisine</title>
+  <meta name="description" content="Cappadocia Restaurant – Authentic Turkish cuisine in Ipswich. Dine-in & Takeaway. London Rd, Capel St Mary, Ipswich IP9 2JJ. Call 01473 311443." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-logo">
+      <span>Cappadocia</span>
+      <span>Restaurant · Ipswich</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#info">Hours</a></li>
+      <li><a href="#contact" class="nav-reserve-btn">Reserve a Table</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#menu" onclick="closeMobile()">Menu</a>
+    <a href="#reviews" onclick="closeMobile()">Reviews</a>
+    <a href="#info" onclick="closeMobile()">Hours &amp; Info</a>
+    <a href="#contact" onclick="closeMobile()">Reserve a Table</a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-pattern"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Authentic Turkish Cuisine</div>
+      <h1>
+        Cappadocia
+        <span>Restaurant · Ipswich</span>
+      </h1>
+      <div class="hero-divider">
+        <span class="hero-divider-icon">✦</span>
+      </div>
+      <p>A taste of Turkey on the A12 — fresh ingredients, bold flavours,<br>and warm hospitality in the heart of Suffolk.</p>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.3 &nbsp;·&nbsp; 616 Google reviews &nbsp;·&nbsp; £20–30 per person</span>
+      </div>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn-primary">Explore Menu</a>
+        <a href="#contact" class="btn-outline">Reserve a Table</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">Scroll</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-image-block">
+        <div class="about-img-placeholder">
+          <span>🍽️</span>
+          <p>Cappadocia Kitchen</p>
+        </div>
+        <div class="about-badge">
+          <strong>4.3★</strong>
+          616<br>Reviews
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-tag">Our Story</div>
+        <h2>A Hidden Gem on the A12</h2>
+        <p>Tucked away at Capel St Mary just off the A12, Cappadocia Restaurant brings the warmth and richness of authentic Turkish cooking to Suffolk. Whether you are making the journey from London or exploring the local area, we offer a genuine taste of Turkey that keeps guests coming back.</p>
+        <p>Our kitchen is proud to serve everything from freshly grilled kebabs and hand-rolled lahmacun to hearty sharing platters and indulgent desserts like homemade baklava. Every dish is prepared with care, using quality ingredients and time-honoured recipes.</p>
+        <div class="about-features">
+          <span class="feature-item">Authentic Turkish Recipes</span>
+          <span class="feature-item">Dine-In &amp; Takeaway</span>
+          <span class="feature-item">Family Friendly</span>
+          <span class="feature-item">Great Value Portions</span>
+          <span class="feature-item">Fast, Friendly Service</span>
+          <span class="feature-item">Open from 12pm Daily</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section id="menu">
+    <div class="menu-inner">
+      <div class="section-header">
+        <div class="section-tag">What We Serve</div>
+        <h2>Our Menu</h2>
+        <div class="section-line"><div class="section-line-dot"></div></div>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" onclick="showMenu('starters', this)">Starters</button>
+        <button class="menu-tab" onclick="showMenu('mains', this)">Mains</button>
+        <button class="menu-tab" onclick="showMenu('sharing', this)">Sharing Plates</button>
+        <button class="menu-tab" onclick="showMenu('desserts', this)">Desserts</button>
+      </div>
+
+      <!-- STARTERS -->
+      <div class="menu-section active" id="starters">
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header">
+            <h3>Hummus</h3>
+            <span class="price">£5.50</span>
+          </div>
+          <p>Smooth, creamy chickpea hummus drizzled with olive oil and a sprinkle of paprika. Served with warm flatbread.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Falafel</h3>
+            <span class="price">£6.00</span>
+          </div>
+          <p>Crispy golden falafel made from ground chickpeas and herbs, served with a side of tahini dipping sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Chicken Wings</h3>
+            <span class="price">£7.50</span>
+          </div>
+          <p>Tender, marinated chicken wings seasoned with Turkish spices and grilled to perfection. Served with garlic sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Mixed Salad</h3>
+            <span class="price">£4.50</span>
+          </div>
+          <p>Fresh garden salad with tomato, cucumber, red onion, olives, and feta, dressed in a light lemon vinaigrette.</p>
+        </div>
+      </div>
+
+      <!-- MAINS -->
+      <div class="menu-section" id="mains">
+        <div class="menu-card">
+          <span class="popular-tag">Most Popular</span>
+          <div class="menu-card-header">
+            <h3>Kebab</h3>
+            <span class="price">£13.50</span>
+          </div>
+          <p>Our signature grilled kebab — tender marinated meat cooked on the grill, served with rice, salad and flatbread.</p>
+        </div>
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header">
+            <h3>Lahmacun</h3>
+            <span class="price">£9.00</span>
+          </div>
+          <p>Thin Turkish flatbread topped with minced lamb, fresh tomatoes, onion, parsley and spices. Light, crispy and irresistible.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Kofta</h3>
+            <span class="price">£12.50</span>
+          </div>
+          <p>Seasoned minced lamb kofta skewers, grilled over charcoal. Served with rice, grilled vegetables and a side salad.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Kebab Chicken &amp; Rice</h3>
+            <span class="price">£12.00</span>
+          </div>
+          <p>Juicy grilled chicken kebab served on a bed of fluffy rice with a fresh salad and our house garlic sauce.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Chicken Stew with Veg</h3>
+            <span class="price">£11.50</span>
+          </div>
+          <p>Slow-cooked chicken in a rich tomato and vegetable sauce, seasoned with aromatic Turkish herbs. Served with rice.</p>
+        </div>
+      </div>
+
+      <!-- SHARING -->
+      <div class="menu-section" id="sharing">
+        <div class="menu-card">
+          <span class="popular-tag">Chef's Pick</span>
+          <div class="menu-card-header">
+            <h3>Mix Plate for 2</h3>
+            <span class="price">£26.00</span>
+          </div>
+          <p>A generous sharing platter featuring kebab, kofta, lahmacun, rice, salad, hummus and freshly baked flatbread. Perfect for two.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Platter for Two</h3>
+            <span class="price">£28.00</span>
+          </div>
+          <p>Our ultimate sharing experience — a selection of grilled meats, starters and sides brought together on one impressive platter.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Meze Selection</h3>
+            <span class="price">£16.00</span>
+          </div>
+          <p>A spread of classic Turkish meze including hummus, falafel, tabbouleh, stuffed vine leaves and warm flatbread.</p>
+        </div>
+      </div>
+
+      <!-- DESSERTS -->
+      <div class="menu-section" id="desserts">
+        <div class="menu-card">
+          <span class="popular-tag">Popular</span>
+          <div class="menu-card-header">
+            <h3>Baklava</h3>
+            <span class="price">£4.50</span>
+          </div>
+          <p>Traditional layers of crispy filo pastry filled with chopped pistachios and walnuts, soaked in sweet honey syrup.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Tiramisu</h3>
+            <span class="price">£5.00</span>
+          </div>
+          <p>Classic Italian-inspired tiramisu with layers of espresso-soaked sponge and mascarpone cream, dusted with cocoa.</p>
+        </div>
+        <div class="menu-card">
+          <div class="menu-card-header">
+            <h3>Turkish Tea &amp; Coffee</h3>
+            <span class="price">£2.50</span>
+          </div>
+          <p>Round off your meal with a traditional Turkish çay or a rich Turkish coffee. Complimentary lokum (Turkish delight) included.</p>
+        </div>
+      </div>
+
+      <p style="text-align:center; color:#999; font-family:Arial,sans-serif; font-size:0.8rem; margin-top:2rem;">
+        Prices are approximate. Please call or visit for the full current menu. Cash preferred.
+      </p>
+    </div>
+  </section>
+
+  <!-- SPECIALS -->
+  <section id="specials">
+    <div class="specials-inner">
+      <div class="section-tag">Why Guests Love Us</div>
+      <h2>The Cappadocia Experience</h2>
+      <p>From a quick lunch off the A12 to a relaxed family dinner, we make every visit memorable with honest food, fair prices and a genuinely warm welcome.</p>
+      <div class="specials-grid">
+        <div class="special-item">
+          <span class="special-icon">🔥</span>
+          <h4>Freshly Grilled</h4>
+          <p>Everything cooked to order on our charcoal grill for maximum flavour.</p>
+        </div>
+        <div class="special-item">
+          <span class="special-icon">👨‍👩‍👧</span>
+          <h4>Family Friendly</h4>
+          <p>Kids' menu available. A relaxed, welcoming atmosphere for all ages.</p>
+        </div>
+        <div class="special-item">
+          <span class="special-icon">🥡</span>
+          <h4>Eat In or Take Away</h4>
+          <p>Enjoy your meal in our restaurant or take it on the road with you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews">
+    <div class="section-header">
+      <div class="section-tag">What People Say</div>
+      <h2>Guest Reviews</h2>
+      <div class="section-line"><div class="section-line-dot"></div></div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Hidden gem on the A12! Food was good at a fair price and service was fast. My partner is a Turkish food fanatic and she loved her mixed sis! Staff are pleasant and attentive, we'd go back.</p>
+        <div class="reviewer-name">Darren Carter</div>
+        <div class="reviewer-meta">Local Guide · 8 months ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">We've driven past this place many times heading up to the Suffolk Coast and always kicked ourselves for stopping elsewhere. Not today! So glad we finally stopped — absolutely worth it.</p>
+        <div class="reviewer-name">James Donkin</div>
+        <div class="reviewer-meta">Local Guide · 7 months ago</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Very good food, both Turkish and Fish and Chips, good service and prices. Perfect portion sizes, delicious chicken with salad and rice and amazing bread.</p>
+        <div class="reviewer-name">Google Reviewer</div>
+        <div class="reviewer-meta">Verified Review</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Nice place to have a filling tasty meal, good ambience as well. The food at the restaurant is fantastic and the service is impeccable. Highly recommend the kebab.</p>
+        <div class="reviewer-name">Google Reviewer</div>
+        <div class="reviewer-meta">Verified Review</div>
+      </div>
+    </div>
+
+    <div class="reviews-summary">
+      <div class="rating-big">
+        <div class="number">4.3</div>
+        <span class="stars-big">★★★★★</span>
+        <div class="count">616 Google Reviews</div>
+      </div>
+      <div class="rating-bars">
+        <div class="rating-bar-row"><span>5★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:65%"></div></div></div>
+        <div class="rating-bar-row"><span>4★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:20%"></div></div></div>
+        <div class="rating-bar-row"><span>3★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:8%"></div></div></div>
+        <div class="rating-bar-row"><span>2★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:4%"></div></div></div>
+        <div class="rating-bar-row"><span>1★</span><div class="rating-bar-track"><div class="rating-bar-fill" style="width:3%"></div></div></div>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://www.google.com/maps/place/Cappadocia+Restaurant+Ipswich" target="_blank" class="btn-primary" style="font-size:0.75rem; padding:0.7rem 1.5rem;">
+          Read All Reviews
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & INFO -->
+  <section id="info">
+    <div class="section-header">
+      <div class="section-tag">Find Us</div>
+      <h2>Hours &amp; Information</h2>
+      <div class="section-line"><div class="section-line-dot"></div></div>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="info-icon">🕐</span>
+        <h3>Opening Hours</h3>
+        <ul class="hours-list">
+          <li><span>Monday</span><span>12pm – 10pm</span></li>
+          <li><span>Tuesday</span><span>12pm – 10pm</span></li>
+          <li><span>Wednesday</span><span>12pm – 10pm</span></li>
+          <li><span>Thursday</span><span>12pm – 10pm</span></li>
+          <li><span>Friday</span><span>12pm – 11pm</span></li>
+          <li><span>Saturday</span><span>12pm – 11pm</span></li>
+          <li><span>Sunday</span><span>12pm – 10pm</span></li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">📍</span>
+        <h3>Location</h3>
+        <p>
+          London Rd, Capel St Mary<br>
+          Ipswich<br>
+          IP9 2JJ<br><br>
+          <a href="https://maps.google.com/?q=Cappadocia+Restaurant+Ipswich+IP9+2JJ" target="_blank">Get Directions →</a><br><br>
+          Conveniently located off the A12 at Capel St Mary services. Easy parking available.
+        </p>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">📞</span>
+        <h3>Contact &amp; Booking</h3>
+        <p>
+          <a href="tel:01473311443" style="font-size:1.15rem; font-weight:700; color:var(--terracotta);">01473 311443</a><br><br>
+          Call us to reserve a table or place a takeaway order.<br><br>
+          <strong style="color:var(--charcoal);">Dine-In &amp; Takeaway</strong><br>
+          Cash preferred · £20–30 per person<br><br>
+          <a href="https://www.facebook.com" target="_blank">Follow us on Facebook →</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section id="map-section">
+    <div class="map-inner">
+      <div class="section-header">
+        <div class="section-tag">Easy to Find</div>
+        <h2>Find Us on the Map</h2>
+        <div class="section-line"><div class="section-line-dot"></div></div>
+      </div>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1159.0!2d1.0571603!3d52.0033003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d909f6de1a5e73%3A0xbd63bf7b795f1001!2sCappadocia%20Restaurant%20Ipswich!5e0!3m2!1sen!2suk!4v1"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Cappadocia Restaurant location map">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / RESERVATION -->
+  <section id="contact">
+    <div class="contact-inner">
+      <div class="section-header">
+        <div class="section-tag">Get in Touch</div>
+        <h2>Reserve a Table</h2>
+        <div class="section-line"><div class="section-line-dot"></div></div>
+      </div>
+      <p>Book a table by calling us directly or filling in the form below and we'll get back to you to confirm your reservation.</p>
+
+      <div class="contact-cards">
+        <a href="tel:01473311443" class="contact-card">
+          <span class="contact-icon">📞</span>
+          <span>Phone</span>
+          <strong>01473 311443</strong>
+        </a>
+        <a href="https://maps.google.com/?q=Cappadocia+Restaurant+Ipswich+IP9+2JJ" target="_blank" class="contact-card">
+          <span class="contact-icon">📍</span>
+          <span>Address</span>
+          <strong>IP9 2JJ, Ipswich</strong>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" class="contact-card">
+          <span class="contact-icon">📘</span>
+          <span>Facebook</span>
+          <strong>Find Us Online</strong>
+        </a>
+      </div>
+
+      <div class="reservation-form">
+        <h3>Request a Reservation</h3>
+        <form id="reservationForm" onsubmit="submitReservation(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="Your phone number" required />
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" required />
+            </div>
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="time" id="time" min="12:00" max="22:00" required />
+            </div>
+            <div class="form-group">
+              <label for="guests">Number of Guests</label>
+              <select id="guests">
+                <option>1 Guest</option>
+                <option selected>2 Guests</option>
+                <option>3 Guests</option>
+                <option>4 Guests</option>
+                <option>5 Guests</option>
+                <option>6 Guests</option>
+                <option>7+ Guests – please call</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="dining">Preference</label>
+              <select id="dining">
+                <option>Dine-In</option>
+                <option>Takeaway</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="notes">Special Requests (optional)</label>
+              <textarea id="notes" placeholder="Dietary requirements, occasion, etc."></textarea>
+            </div>
+          </div>
+          <button type="submit" class="form-submit">Send Reservation Request</button>
+        </form>
+        <div id="formSuccess" style="display:none; text-align:center; padding:1.5rem; background:#e8f5e9; border-radius:4px; margin-top:1rem; font-family:Arial,sans-serif; color:#2e7d32;">
+          ✅ Thank you! We've received your request and will call to confirm shortly.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo">Cappadocia</span>
+          <p>Authentic Turkish cuisine served with warmth and passion. A hidden gem off the A12 in Capel St Mary, Ipswich. Open daily from 12pm.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#info">Opening Hours</a></li>
+            <li><a href="#contact">Reserve a Table</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit Us</h4>
+          <p>
+            London Rd, Capel St Mary<br>
+            Ipswich, IP9 2JJ<br><br>
+            <a href="tel:01473311443" style="color:var(--gold);">01473 311443</a><br><br>
+            Open Daily from 12pm
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Cappadocia Restaurant Ipswich. All rights reserved.</span>
+        <span>London Rd, Capel St Mary, Ipswich IP9 2JJ &nbsp;·&nbsp; <a href="tel:01473311443">01473 311443</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
