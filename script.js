@@ -47,8 +47,10 @@ document.addEventListener('keydown', (e) => {
 
 // Gallery filter
 let galleryExpanded = false;
+let galleryCat = 'all';
 
 function showGallery(cat, btn) {
+  galleryCat = cat;
   document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.gallery-item').forEach(item => {
@@ -67,10 +69,8 @@ function showGallery(cat, btn) {
 // Gallery View More toggle
 function toggleGalleryExtra(btn) {
   galleryExpanded = !galleryExpanded;
-  const activeTab = document.querySelector('.gallery-tab.active');
-  const cat = activeTab ? activeTab.getAttribute('onclick').match(/'([^']+)'/)[1] : 'all';
   document.querySelectorAll('.gallery-item.gallery-extra').forEach(item => {
-    const catMatch = cat === 'all' || item.dataset.cat === cat;
+    const catMatch = galleryCat === 'all' || item.dataset.cat === galleryCat;
     item.style.display = (galleryExpanded && catMatch) ? 'block' : 'none';
   });
   btn.textContent = galleryExpanded ? 'Show Less' : 'View More Photos';
