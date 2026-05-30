@@ -264,16 +264,18 @@ function selectAllergy(choice) {
 function sendWhatsAppOrder() {
   if (cart.length === 0) return;
   const lines = cart.map(i => {
-    let line = `- ${i.name} x${i.qty}${i.price > 0 ? ' (£' + i.price.toFixed(2) + ' each)' : ''}`;
+    let line = `• ${i.name} × ${i.qty}${i.price > 0 ? ' (£' + i.price.toFixed(2) + ')' : ''}`;
     if (i.note) line += ` — ${i.note}`;
     return line;
   }).join('\n');
+  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const totalLine = total > 0 ? `\n\n💰 *Estimated Total: £${total.toFixed(2)}*` : '';
   let allergyLine = '';
   if (allergyChoice === 'yes') {
     const text = (document.getElementById('allergyInput')?.value || '').trim();
-    allergyLine = `\nAllergies / Dietary requirements: ${text || 'Please confirm with customer'}`;
+    allergyLine = `\n\n⚠️ *Allergies:* ${text || 'Please confirm with customer'}`;
   }
-  const msg = `Hello, I would like to place an order.\n\nItems:\n${lines}${allergyLine}\n\nPlease confirm availability and total price. Thank you.`;
+  const msg = `👋 Hello, I'd like to place an order from Cappadocia Restaurant.\n\n🧾 *Order Details:*\n${lines}${allergyLine}${totalLine}\n\nPlease confirm availability and total. Thank you! 🙏`;
   window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
 
