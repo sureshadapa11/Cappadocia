@@ -28,6 +28,26 @@ body {
   overflow-x: hidden;
 }
 
+/* ── MENU DOWNLOAD BUTTON ── */
+.menu-download-btn {
+  display: inline-block;
+  padding: 0.65rem 2rem;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.25s, color 0.25s;
+}
+.menu-download-btn:hover {
+  background: var(--gold);
+  color: #1a1a1a;
+}
+
 /* ── SPECIALS BANNER ── */
 .specials-banner {
   background: var(--gold);
