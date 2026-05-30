@@ -1,25 +1,32 @@
 // Specials banner dismiss
-function adjustNavForBanner() {
+function getOffsetHeight() {
   const banner = document.getElementById('specialsBanner');
   const nav = document.getElementById('navbar');
-  if (!banner || !nav) return;
-  const height = banner.classList.contains('hidden') ? 0 : banner.offsetHeight;
-  nav.style.top = height + 'px';
+  const bannerH = (!banner || banner.classList.contains('hidden')) ? 0 : banner.offsetHeight;
+  const navH = nav ? nav.offsetHeight : 70;
+  return { bannerH, navH, total: bannerH + navH };
+}
+
+function adjustLayout() {
+  const { bannerH, total } = getOffsetHeight();
+  const nav = document.getElementById('navbar');
+  const hero = document.getElementById('hero');
+  if (nav) nav.style.top = bannerH + 'px';
+  if (hero) hero.style.paddingTop = total + 'px';
 }
 
 function dismissBanner() {
-  const banner = document.getElementById('specialsBanner');
-  banner.classList.add('hidden');
+  document.getElementById('specialsBanner').classList.add('hidden');
   sessionStorage.setItem('bannerDismissed', '1');
-  document.getElementById('navbar').style.top = '0';
+  adjustLayout();
 }
 
 if (sessionStorage.getItem('bannerDismissed')) {
   const b = document.getElementById('specialsBanner');
   if (b) b.classList.add('hidden');
 }
-adjustNavForBanner();
-window.addEventListener('resize', adjustNavForBanner);
+adjustLayout();
+window.addEventListener('resize', adjustLayout);
 
 // ── OPEN NOW / CLOSED BADGE ──────────────────────────
 function updateOpenBadge() {

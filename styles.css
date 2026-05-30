@@ -196,8 +196,7 @@ nav {
 
 /* ── HERO ── */
 #hero {
-  height: 100vh;
-  min-height: 600px;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
