@@ -250,7 +250,9 @@ function sendWhatsAppOrder() {
     if (i.note) line += ` — ${i.note}`;
     return line;
   }).join('\n');
-  const msg = `Hello, I would like to place an order.\n\nItems:\n${lines}\n\nPlease confirm availability and total price. Thank you.`;
+  const allergy = (document.getElementById('allergyInput')?.value || '').trim();
+  const allergyLine = allergy ? `\nAllergies / Dietary requirements: ${allergy}` : '';
+  const msg = `Hello, I would like to place an order.\n\nItems:\n${lines}${allergyLine}\n\nPlease confirm availability and total price. Thank you.`;
   window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg), '_blank');
 }
 

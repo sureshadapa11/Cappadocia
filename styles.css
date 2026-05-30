@@ -1708,6 +1708,19 @@ footer {
   text-align: center;
   font-family: 'Arial', sans-serif;
 }
+.cart-allergy-wrap {
+  margin-bottom: 0.8rem;
+}
+.cart-allergy-label {
+  display: block;
+  color: #aaa;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
 .cart-note-toggle {
   background: none;
   border: none;
