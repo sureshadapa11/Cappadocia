@@ -105,7 +105,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ── CART ──────────────────────────────────────────────
-const WHATSAPP_NUMBER = '447700000000'; // replace when live number is ready
+const WHATSAPP_NUMBER = '447824063148';
 let cart = [];
 
 // Inject "Add" button into every menu card on load
