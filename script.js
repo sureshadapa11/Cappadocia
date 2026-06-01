@@ -183,8 +183,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const WHATSAPP_NUMBER = '447824063148';
 let cart = [];
 
-// Inject corner stepper into every menu card on load
+// Inject corner stepper into every menu card on load (skip Beers & Ciders)
 document.querySelectorAll('.menu-card').forEach(card => {
+  if (card.querySelector('h3')?.textContent.includes('Beer')) return;
   const stepper = document.createElement('div');
   stepper.className = 'card-stepper';
   stepper.innerHTML = `
